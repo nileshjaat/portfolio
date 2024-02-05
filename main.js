@@ -1,10 +1,10 @@
-const smoothScrollHandler = target => {
+const smoothScrollHandler = (target) => {
   const pos = target.getBoundingClientRect();
 
   window.scroll({
     top: pos.y + 5,
     left: 0,
-    behavior: 'smooth'
+    behavior: 'smooth',
   });
 };
 const projects = document.getElementById('projects');
@@ -34,5 +34,10 @@ const navScrollHandler = () => {
   }
 };
 navScrollHandler();
+
+window.onload = () => {
+  const yearEl = document.querySelector('.current-year');
+  yearEl.innerHTML = new Date().getFullYear();
+};
 
 document.addEventListener('scroll', navScrollHandler);
